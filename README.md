@@ -14,4 +14,17 @@ Now, from hearing about all these amazing things that containers can do, the big
 
 Now, lets get more indepth with how to create and run containers on your own system.
 
+Now, for a few important terms:
+  Images: Images are blueprints for containers. With an image you can make multiple of the same exact container.
+  Volumes: Volumes are a way to store data in a container, without actually taking up space in a container. It acts as a pointer to a storage system on the host machine that is running the container.
+          - Volumes are one of the only ways that a container is able to have direct access to the host machine.
+
 The mainstream tool that most developers will use is an application called Docker. Docker is a tool used to run, create, and manage containers.
+Docker comes in a few different formats:
+  1. If you are on Windows, Mac, or Linux you can download Docker Desktop : https://www.docker.com/products/docker-desktop/
+  2. If you are on Linux you can also install the Docker Engine for interacting with Docker via the command line
+
+The most user friendly version of Docker is there GUI application called Docker Desktop. From this application, you can pull images from Docker Hub (Which is a repository system from storing Images).
+  - By the way, images are blueprints of containers. You need an image in order to run a container.
+
+# We will be using the Docker CLI provided by installing Docker Desktop onto your system for the rest of the tutorial
