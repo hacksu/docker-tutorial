@@ -18,6 +18,8 @@ Now, for a few important terms:
   Images: Images are blueprints for containers. With an image you can make multiple of the same exact container.
   Volumes: Volumes are a way to store data in a container, without actually taking up space in a container. It acts as a pointer to a storage system on the host machine that is running the container.
           - Volumes are one of the only ways that a container is able to have direct access to the host machine.
+  Docker Engine: The Docker Engine is themain processor involved with running containers. The docker engine acts as a "Client side application" with a sevrer for a daemon process called dockerd.
+  Dockerd: Dockerd is a persistant process provided by the docker engine from running containers. This is mainly a background tool that runs without you needing to know about it.
 
 The mainstream tool that most developers will use is an application called Docker. Docker is a tool used to run, create, and manage containers.
 Docker comes in a few different formats:
@@ -28,3 +30,13 @@ The most user friendly version of Docker is there GUI application called Docker 
   - By the way, images are blueprints of containers. You need an image in order to run a container.
 
 # We will be using the Docker CLI provided by installing Docker Desktop onto your system for the rest of the tutorial
+
+Docker CLI is a command line interface for interacting with Docker. We will be using Docker CLI for a majority of this lesson.
+
+Once you all have Docker Desktop installed onto your system, make sure to have Docker Desktop currently running as the only way to run containers is by having the "Docker Engine" running. 
+So now that everyone has Docker running on there computers it is time to began a demonstration of a few different docker tools.
+
+Firstly: the main way to create a container is by using a thing called a Dockerfile:
+
+
+
