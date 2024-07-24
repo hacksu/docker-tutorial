@@ -38,5 +38,51 @@ So now that everyone has Docker running on there computers it is time to began a
 
 Firstly: the main way to create a container is by using a thing called a Dockerfile:
 
+Now as the instructor, go to the "helloWorldDocker" folder and do a build along with the dockerfile. It is super basic stuff. 
+First, have everyone at the lesson make a new folder and open an IDE (like visual studioes code or sublime text).
+Second make an index.html file in that new folder:
+Put in a basic hello world script
+```
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Hello, World!</h1>
+</body>
+</html>
+```
+Then tell them to make a file called "Dockerfile": The D must be capital.
 
+remind them that the dockerfile is how an Image is created.
 
+Once the dockerfile is created, add in this code:
+```
+FROM nginx:alpine
+COPY index.html /usr/share/nginx/html/
+EXPOSE 80
+```
+The FROM statment in the dockerfile is calling an image called "nginx:alpine" as the base of the docker image.
+All docker images are built off of other docker images, so the first line in the dockerfile should always be a FROM statement.
+
+The COPY statment takes the index.html file we created and copies it into the container at the directory of "/usr/share/nginx/html/"
+
+The EXPOSE statement exposes the port number 80, so when you run the container you can connect to the container from port number 80.
+
+Then once the dockerfile and index.html file has been created, tell everyone to open up a command prompt.
+Then have everyone use the "cd" command to go to the directory for the helloWorld application. Make sure everyone is in the right folder.
+
+Now in order to start the container we have to build it first. The building sequence takes the dockerfile and generates us an image that ca be used as the blueprint for our container.
+
+So type out the following command
+```
+docker build -t hello-world:0.1 .
+```
+the -t tage represents the name of the container followed by the tag of the container, so it will be called helloWorld with a tag number or version number of 0.1.
+Then the . represents the location of the dockerfile, which is the current directory.
+
+The docker build command will create for us a docker image, so once the build command finishes we can type out
+```
+docker run -p 80:80 -t hello-world:0.1
+```
+The -p tag represents the port number the application is accessible on, and the -t tag represents the docker image being ran.
+
+Now that the container is running, open up the web broweser and go to localhost:80 and the Hello World application should be up and running perfectly!
