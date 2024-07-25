@@ -86,3 +86,7 @@ docker run -p 80:80 -t hello-world:0.1
 The -p tag represents the port number the application is accessible on, and the -t tag represents the docker image being ran.
 
 Now that the container is running, open up the web broweser and go to localhost:80 and the Hello World application should be up and running perfectly!
+
+# Minecraft Docker Container Tutorial
+
+After setting up the nginx mini container set up, this next part will explore Docker-Compose files, and how they work.
