@@ -89,4 +89,55 @@ Now that the container is running, open up the web broweser and go to localhost:
 
 # Minecraft Docker Container Tutorial
 
-After setting up the nginx mini container set up, this next part will explore Docker-Compose files, and how they work.
+After setting up the nginx mini container set up, this next part will explore Docker-Compose files, and how they work by using Docker-Compose to set up and run your own Minecraft server!
+
+Firstly, Docker-Compose is a configuration file used for managing containers in an easy way. When working with containers, you sometimes have to write a long command in the command line in order to start the container. For example:
+```
+docker run -d -it -p 25565:25565 -e EULA=TRUE itzg/minecraft-server
+```
+This command is how you would be able to start a minecraft server with just the Docker CLI. But it can become tedious to have to type this command out everytime you want to change something or when you want to run the server again. That is why it is recommended to created a docker-compose.yml file to manage your container settings in one easy to use place.
+
+Docker Compose is a powerful tool as well when needing to run multiple containers, and having these containers talk to each other. Docker compose has many uses to it, but with the limited amount of time, we will restrict it to the basics for the demo.
+
+Source: https://docker-minecraft-server.readthedocs.io/en/latest/
+
+1. Create a new directory
+2. Put the contents of the code below in a file called docker-compose.yml
+3. Run docker compose up -d in that directory
+4. Done! Point your client at your host's name/IP address and port 25565.
+
+Here is the full code. Also included is a step by step explanation of each line of code.
+```
+services:
+  mc:
+    image: itzg/minecraft-server
+    tty: true
+    stdin_open: true
+    ports:
+      - "25565:25565"
+    environment:
+      EULA: "TRUE"
+    volumes:
+      # attach the relative directory 'data' to the container's /data path
+      - ./data:/data
+```
+Step by step:
+```sercies:```
+The first part of the docker-compose.yml file is a thing called "services", which are processes that need to be run by docker, so in our case it represents the containers.
+Next: ```mc:``` represents the name of the name of a service. In the "services" you can have multiple service, so by giving each service a unique name it allows docker to differantiate easier.
+Next: ```image: itzg/minecraft-server``` represents the image that docker will be running. "itzg" is the name of the author of the image, and "minecraft-server" is the name of the image repository.
+Next: ```tty: true``` helps to set up an interactive shell for the container, which is important for sending commands to the container.
+Next: ```stdin_open: true``` is used with combination with "tty" to help interaction with the container
+Next: 
+```
+ports:
+  - "25565:25565"
+```
+This tells docker what port to start and point the container at, which allows for communication between the container and the user.
+Next: ```enviroment:``` is needed when setting environental variables before the container starts. It can be very useful.
+Next: ```EULA: "TRUE"``` sets the environmental variable "EULA" to True, which is the Minecraft user agreement lisence.
+Next: ```volumes:``` is very useful for attaching extrenal storage drives to the container, and in our case ```- ./data:/data``` is the volume that needs to be attached. This creates a new directory called "data" inside the container, and it creates a symbolic link between the directory of "data" in our personal machine.
+
+To apply changes made to the compose file, just run docker compose up -d again.
+
+Follow the logs of the container using docker compose logs -f, check on the status with docker compose ps, and stop the container using docker compose stop.
