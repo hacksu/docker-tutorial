@@ -15,11 +15,15 @@ Now, let’s get more in-depth with how to create and run containers on your own
 
 Now, for a few important terms:
 
-Images: Images are blueprints for containers. With an image, you can make multiple of the same exact container.
+Images: Images are blueprints for containers. With an image, you can make multiple of the same exact container. 
+
 Volumes: Volumes are a way to store data in a container without actually taking up space in a container. It acts as a pointer to a storage system on the host machine that is running the container.
     - Volumes are one of the only ways that a container can have direct access to the host machine.
+    
 Docker Engine: The Docker Engine is the main processor involved with running containers. The Docker engine acts as a "Client-side application" with a server for a daemon process called dockerd.
+
 Dockerd: Dockerd is a persistent process provided by the Docker engine for running containers. This is mainly a background tool that runs without you needing to know about it.
+
 
 The mainstream tool that most developers will use is an application called Docker. Docker is a tool used to run, create, and manage containers. Docker comes in a few different formats:
 
