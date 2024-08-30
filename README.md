@@ -122,7 +122,7 @@ services:
       - ./data:/data
 ```
 Step by step:
-```sercies:```
+```services:```
 The first part of the docker-compose.yml file is a thing called "services", which are processes that need to be run by docker, so in our case it represents the containers.
 Next: ```mc:``` represents the name of the name of a service. In the "services" you can have multiple service, so by giving each service a unique name it allows docker to differantiate easier.
 Next: ```image: itzg/minecraft-server``` represents the image that docker will be running. "itzg" is the name of the author of the image, and "minecraft-server" is the name of the image repository.
