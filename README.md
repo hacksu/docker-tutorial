@@ -3,9 +3,9 @@ Containerization is the process of turning an application or piece of software i
 
 Well, a container, as mentioned before, is an independent environment that holds a piece of software or an application. A container contains 3 components to achieve independence.
 
-    Every container contains a small isolated operating system, whether it be Linux-based or Windows-based.
-    Each container includes all the dependencies, environmental variables, and scripts needed for a specific application.
-    Finally, the container includes the code and configurations to run the application.
+Every container contains a small isolated operating system, whether it be Linux-based or Windows-based.
+Each container includes all the dependencies, environmental variables, and scripts needed for a specific application.
+Finally, the container includes the code and configurations to run the application.
 
 Containers are essentially tools that work out of the box, meaning they function as soon as you run the container, and usually do not need any extra setup if built correctly. This offers a lot of unique benefits, for example: if you want to develop a project with a friend, instead of needing to make sure your friend has all the required tools needed to run the application, you can just make a container and share it with your friend. This way, you can continue to develop the application without needing to install any additional tools on your friend's computer.
 
@@ -15,16 +15,16 @@ Now, let’s get more in-depth with how to create and run containers on your own
 
 Now, for a few important terms:
 
-    Images: Images are blueprints for containers. With an image, you can make multiple of the same exact container.
-    Volumes: Volumes are a way to store data in a container without actually taking up space in a container. It acts as a pointer to a storage system on the host machine that is running the container.
-        Volumes are one of the only ways that a container can have direct access to the host machine.
-    Docker Engine: The Docker Engine is the main processor involved with running containers. The Docker engine acts as a "Client-side application" with a server for a daemon process called dockerd.
-    Dockerd: Dockerd is a persistent process provided by the Docker engine for running containers. This is mainly a background tool that runs without you needing to know about it.
+Images: Images are blueprints for containers. With an image, you can make multiple of the same exact container.
+Volumes: Volumes are a way to store data in a container without actually taking up space in a container. It acts as a pointer to a storage system on the host machine that is running the container.
+    - Volumes are one of the only ways that a container can have direct access to the host machine.
+Docker Engine: The Docker Engine is the main processor involved with running containers. The Docker engine acts as a "Client-side application" with a server for a daemon process called dockerd.
+Dockerd: Dockerd is a persistent process provided by the Docker engine for running containers. This is mainly a background tool that runs without you needing to know about it.
 
 The mainstream tool that most developers will use is an application called Docker. Docker is a tool used to run, create, and manage containers. Docker comes in a few different formats:
 
-    If you are on Windows, Mac, or Linux, you can download Docker Desktop: https://www.docker.com/products/docker-desktop/
-    If you are on Linux, you can also install the Docker Engine for interacting with Docker via the command line.
+If you are on Windows, Mac, or Linux, you can download Docker Desktop: https://www.docker.com/products/docker-desktop/
+If you are on Linux, you can also install the Docker Engine for interacting with Docker via the command line.
 
 The most user-friendly version of Docker is their GUI application called Docker Desktop. From this application, you can pull images from Docker Hub (which is a repository system for storing images).
 
